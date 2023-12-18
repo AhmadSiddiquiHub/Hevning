@@ -1,9 +1,61 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const HomePage = () => {
+  const settings = {
+    arrows: true,
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+  };
   return (
     <>
+      <div className="relative overflow-hidden">
+        <video
+          className="w-full h-full object-fill md:w-full md:h-[75vh]"
+          autoPlay
+          loop
+          muted
+          playsInline
+        >
+          <source src="/images/banner-vid-2.webm" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      {/* <section className="slider overflow-hidden">
+        <Slider {...settings}>
+          <div>
+            <img
+              className="w-[100vw] md:h-[75vh] h-[50vh]"
+              src="/images/test.png"
+              alt="Slide 1"
+            />
+          </div>
+          <div>
+            <img
+              className="w-[100vw] md:h-[75vh] h-[50vh]"
+              src="/images/test2.jpg"
+              alt="Slide 1"
+            />
+          </div>
+          <div>
+            <img
+              className="w-[100vw] md:h-[75vh] h-[50vh]"
+              src="/images/test3.jpg"
+              alt="Slide 1"
+            />
+          </div>
+        </Slider>
+      </section> */}
+
       <section className="home text-center ">
         <div className="top-content mt-8 md:mt-12 flex flex-col justify-center items-center">
           <p className="text-[15px] md:text-[1.042vw] ">

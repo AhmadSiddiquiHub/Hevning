@@ -41,16 +41,14 @@ const Footer = () => {
                   <br />
                   TVA - BE 0793.256.694
                 </p>
-                <p className="mr-8 hidden md:block">Language</p>
               </div>
-              <div className="flex md:hidden justify-between items-center pt-6">
-                <div className="icons text-3xl flex gap-4">
+              <div className="flex md:hidden items-center pt-6">
+                <div className="icons text-2xl flex gap-4">
                   <FaLinkedinIn />
                   <FaInstagram />
                   <FaFacebookF />
                   <FaYoutube />
                 </div>
-                <p>Language</p>
               </div>
             </div>
           </div>

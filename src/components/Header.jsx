@@ -1,59 +1,18 @@
-import React, { useState, useEffect, useRef } from "react";
-import { Link, useNavigate, useLocation } from "react-router-dom";
-import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { Link as ScrollLink } from "react-scroll";
 import { FaFacebookF } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
 import { RiMenu3Fill } from "react-icons/ri";
 import { RxCross2 } from "react-icons/rx";
+import useScrollSection from "../utils/scrollSection";
 
 const Header = () => {
+  const { handleNavigation } = useScrollSection();
   const [open, setOpen] = useState(false);
-  const navigate = useNavigate();
-  const location = useLocation();
 
-  const scrollTo = (elementId) => {
-    const element = document.getElementById(elementId);
-
-    if (element) {
-      scroll.scrollTo(element.offsetTop - 90, {
-        duration: 500,
-        smooth: true,
-      });
-
-      setOpen(false);
-    }
-  };
-
-  useEffect(() => {
-    // Scroll to the top when the component mounts
-    scroll.scrollToTop({
-      duration: 0, // Instant scroll on mount
-      smooth: false,
-    });
-  }, []);
-
-  useEffect(() => {
-    const { state } = location;
-
-    if (state && state.scrollTo) {
-      // If there is a scrollTo state, scroll to the specified section
-      scrollTo(state.scrollTo);
-    }
-  }, [location.state]);
-
-  const handleNavigation = (sectionId) => {
-    const isHomePage = location.pathname === "/";
-
-    if (isHomePage) {
-      // If on the homepage, scroll to the section
-      scrollTo(sectionId);
-    } else {
-      // If on another page, navigate to the homepage with a query parameter
-      navigate("/", { state: { scrollTo: sectionId } });
-    }
-  };
   return (
     <>
       <header className="bg-[#F7F7F7] py-4 sticky top-0 z-50">
