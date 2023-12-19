@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";
 import useScrollSection from "../utils/scrollSection";
 
@@ -71,6 +72,13 @@ const Product = () => {
                     Ask for a quote
                   </ScrollLink>
                 </button>
+              </div>
+              <div className="cart-btn w-full col-span-full flex items-center justify-center my-4">
+                <Link to="/checkout" className="w-full ">
+                  <button className="w-full text-[18px] md:text-[0.781vw] italic border-2 border-[#000] text-white bg-[#000] hover:bg-white hover:text-black py-3 px-14 my-2 font-black">
+                    Add to Cart
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
